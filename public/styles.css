@@ -1,0 +1,290 @@
+body {
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  background: #f5f7fa;
+  color: #222;
+}
+header {
+  background: linear-gradient(90deg, #2b5876 0%, #4e4376 100%);
+  color: #fff;
+  padding: 1.2rem 0 1rem 0;
+  text-align: center;
+  box-shadow: 0 2px 12px rgba(44,62,80,0.10);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+header h1 {
+  margin: 0;
+  font-size: 2.1rem;
+  letter-spacing: 2px;
+  font-weight: 700;
+  display: inline-block;
+  vertical-align: middle;
+}
+nav {
+  margin-top: 1.1rem;
+}
+nav button {
+  margin: 0 0.5rem;
+  padding: 0.6rem 1.3rem;
+  background: #fff;
+  color: #4e4376;
+  border: none;
+  border-radius: 22px;
+  font-weight: 600;
+  font-size: 1rem;
+  box-shadow: 0 1px 4px rgba(44,62,80,0.07);
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+nav button:hover, nav button.active {
+  background: #4e4376;
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(44,62,80,0.13);
+}
+main {
+  max-width: 1100px;
+  margin: 2.5rem auto;
+  background: #fff;
+  padding: 2.5rem 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 32px rgba(44,62,80,0.13);
+}
+section {
+  margin-bottom: 2.5rem;
+}
+.search-bar {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.search-bar input {
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  font-size: 1rem;
+  background: #f5f7fa;
+  transition: border 0.2s;
+}
+.search-bar input:focus {
+  border: 1.5px solid #4e4376;
+  outline: none;
+}
+#products-list, #admin-products-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+.product-card, .admin-product-card {
+  background: #fff;
+  border: 1px solid #e3e6ee;
+  border-radius: 12px;
+  padding: 1.2rem 1rem 1.5rem 1rem;
+  box-shadow: 0 2px 12px rgba(44,62,80,0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: box-shadow 0.2s, transform 0.2s;
+  position: relative;
+  min-height: 320px;
+  animation: fadeIn 0.5s;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: none; }
+}
+.product-card:hover, .admin-product-card:hover {
+  box-shadow: 0 8px 32px rgba(44,62,80,0.16);
+  transform: translateY(-4px) scale(1.02);
+}
+.product-card img, .admin-product-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 0.7rem;
+  background: #fff;
+  box-shadow: 0 1px 4px rgba(44,62,80,0.04);
+}
+.product-card h3, .admin-product-card h3 {
+  margin: 0.2rem 0 0.3rem 0;
+  font-size: 1.2rem;
+  color: #2b5876;
+}
+.product-card p, .admin-product-card p {
+  margin: 0.1rem 0;
+  font-size: 1rem;
+  color: #444;
+}
+.product-card button, .admin-product-card button, #place-order-btn, .toast {
+  margin-top: 0.7rem;
+  padding: 0.5rem 1.1rem;
+  background: linear-gradient(90deg, #2b5876 0%, #4e4376 100%);
+  color: #fff;
+  border: none;
+  border-radius: 22px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 1px 4px rgba(44,62,80,0.07);
+}
+.product-card button:hover, .admin-product-card button:hover, #place-order-btn:hover {
+  background: linear-gradient(90deg, #4e4376 0%, #2b5876 100%);
+  box-shadow: 0 4px 16px rgba(44,62,80,0.13);
+}
+.pagination {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+#cart-list, #orders-list {
+  margin-top: 1.2rem;
+}
+.cart-item, .order-item {
+  background: #f5f7fa;
+  border: 1px solid #e3e6ee;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 1px 4px rgba(44,62,80,0.04);
+  gap: 1rem;
+}
+.cart-item span {
+  flex: 1;
+}
+.cart-item-img {
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-right: 1rem;
+  box-shadow: 0 1px 4px rgba(44,62,80,0.08);
+  background: #fff;
+  vertical-align: middle;
+}
+.cart-total {
+  text-align: right;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-top: 1rem;
+  color: #2b5876;
+}
+.cart-actions {
+  margin-top: 1.2rem;
+  text-align: right;
+}
+.cart-item input[type='number'] {
+  width: 48px;
+  margin: 0 0.5rem;
+  padding: 0.3rem 0.2rem;
+  font-size: 1rem;
+  border-radius: 4px;
+  border: 1px solid #d1d5db;
+}
+.toast {
+  position: fixed;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #222;
+  color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 24px;
+  font-size: 1.1rem;
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s, bottom 0.3s;
+}
+.toast.show {
+  opacity: 1;
+  bottom: 3.5rem;
+  pointer-events: auto;
+}
+.loading-spinner {
+  display: block;
+  margin: 2rem auto;
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid #4e4376;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+form {
+  margin-bottom: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+form input, form button {
+  padding: 0.6rem;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  font-size: 1rem;
+}
+form button {
+  background: linear-gradient(90deg, #2b5876 0%, #4e4376 100%);
+  color: #fff;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+form button:hover {
+  background: linear-gradient(90deg, #4e4376 0%, #2b5876 100%);
+}
+#auth-message {
+  margin-top: 1rem;
+  color: #d00;
+}
+.admin-users-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1.5rem;
+  background: #f9f9fb;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(44,62,80,0.06);
+}
+.admin-users-table th, .admin-users-table td {
+  padding: 0.7rem 1rem;
+  border-bottom: 1px solid #e3e6ee;
+  text-align: left;
+  font-size: 1rem;
+}
+.admin-users-table th {
+  background: #4e4376;
+  color: #fff;
+  font-weight: 600;
+}
+.admin-users-table tr:last-child td {
+  border-bottom: none;
+}
+.admin-users-table ul {
+  margin: 0.2rem 0 0.2rem 1rem;
+  padding-left: 1.2rem;
+  font-size: 0.97rem;
+}
+.admin-users-table li {
+  margin-bottom: 0.2rem;
+}
+@media (max-width: 700px) {
+  main {
+    padding: 1rem 0.3rem;
+  }
+  #products-list, #admin-products-list {
+    grid-template-columns: 1fr;
+  }
+  .search-bar {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}

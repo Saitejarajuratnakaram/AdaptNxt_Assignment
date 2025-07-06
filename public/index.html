@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-commerce</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1> E-commerce</h1>
+    <nav>
+      <button id="nav-products">Products</button>
+      <button id="nav-cart">Cart</button>
+      <button id="nav-orders">Orders</button>
+      <button id="nav-admin" style="display:none;">Admin</button>
+      <button id="nav-login">Login/Register</button>
+      <button id="nav-logout" style="display:none;">Logout</button>
+    </nav>
+  </header>
+  <main>
+    <!-- Product Listing -->
+    <section id="products-section">
+      <div class="search-bar">
+        <input type="text" id="search-name" placeholder="Search by name">
+        <input type="text" id="search-category" placeholder="Search by category">
+        <button id="search-btn">Search</button>
+      </div>
+      <div id="products-list"></div>
+      <div class="pagination">
+        <button id="prev-page">Prev</button>
+        <span id="page-info"></span>
+        <button id="next-page">Next</button>
+      </div>
+    </section>
+    <!-- Cart -->
+    <section id="cart-section" style="display:none;">
+      <h2>Your Cart</h2>
+      <div id="cart-list"></div>
+      <button id="place-order-btn">Place Order</button>
+    </section>
+    <!-- Orders -->
+    <section id="orders-section" style="display:none;">
+      <h2>Your Orders</h2>
+      <div id="orders-list"></div>
+    </section>
+    <!-- Login/Register -->
+    <section id="auth-section" style="display:none;">
+      <h2>Login</h2>
+      <form id="login-form">
+        <input type="email" id="login-email" placeholder="Email" required>
+        <input type="password" id="login-password" placeholder="Password" required>
+        <button type="submit">Login</button>
+      </form>
+      <h2>Register</h2>
+      <form id="register-form">
+        <input type="text" id="register-name" placeholder="Name" required>
+        <input type="email" id="register-email" placeholder="Email" required>
+        <input type="password" id="register-password" placeholder="Password" required>
+        <button type="submit">Register</button>
+      </form>
+      <div id="auth-message"></div>
+    </section>
+    <!-- Admin Product Management -->
+    <section id="admin-section" style="display:none;">
+      <h2>Admin Product Management</h2>
+      <form id="admin-product-form">
+        <input type="text" id="admin-product-name" placeholder="Name" required>
+        <input type="text" id="admin-product-desc" placeholder="Description">
+        <input type="number" id="admin-product-price" placeholder="Price" required>
+        <input type="text" id="admin-product-category" placeholder="Category" required>
+        <input type="text" id="admin-product-image" placeholder="Image URL">
+        <input type="number" id="admin-product-stock" placeholder="Stock" required>
+        <button type="submit" id="admin-product-form-btn">Add Product</button>
+      </form>
+      <div id="admin-products-list"></div>
+      <div class="pagination" id="admin-pagination">
+        <button id="admin-prev-page">Prev</button>
+        <span id="admin-page-info"></span>
+        <button id="admin-next-page">Next</button>
+      </div>
+      <h2 style="margin-top:2.5rem;">All Users & Orders</h2>
+      <div id="admin-users-orders"></div>
+    </section>
+  </main>
+  <script src="main.js"></script>
+</body>
+</html>
