@@ -1,4 +1,4 @@
-# Simple E-commerce API & Frontend
+#  E-commerce API & Frontend
 
 Welcome to a modern, full-featured e-commerce backend and frontend project! This app lets you browse products, manage your cart, place orders, and—if you're an admin—manage products and view all users and their orders. The UI is clean, responsive, and feels like a real online store.
 
